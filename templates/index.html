@@ -22,7 +22,7 @@
         </nav>
 
         <div class="main-content">
-            {% if request.path == '/pasal' %}
+            {% if page == "pasal" %}
                 <h2>📚 Daftar Pasal Terkait</h2>
                 <p>Jelajahi referensi hukum berupa daftar pasal-pasal yang terkait dengan tindak kekerasan seksual, 
                     lengkap dengan penjelasan ringkas dan relevansi hukum dari masing-masing pasal.</p>
@@ -140,7 +140,7 @@
                         </tr>
                     </tbody>
                 </table>
-            {% elif request.path == '/konsultasi' %}
+            {% elif page == "konsultasi" %}
                 <h2>💬 Konsultasi Kasus</h2>
                 <p>Gunakan fitur ini untuk memasukkan uraian atau kronologi kasus kekerasan seksual. 
                     Sistem akan menganalisis deskripsi tersebut dan memprediksi jenis hukuman yang kemungkinan besar akan dijatuhkan.</p>
