@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>⚖️ SP-Hukuman | Sistem Prediksi Hukuman Kekerasan Seksual</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚖️ SP-Hukuman</h1>
+            <p>Sistem Pakar Prediksi Hukuman Kasus Kekerasan Seksual Metode Random Forest</p>
+        </header>
+
+        <nav>
+            <div>
+                <a href="/">Beranda</a>
+                <a href="/pasal">Pasal</a>
+                <a href="/konsultasi">Konsultasi</a>
+            </div>
+        
+        </nav>
+
+        <div class="main-content">
+            {% if request.path == '/pasal' %}
+                <h2>📚 Daftar Pasal Terkait</h2>
+                <p>Jelajahi referensi hukum berupa daftar pasal-pasal yang terkait dengan tindak kekerasan seksual, 
+                    lengkap dengan penjelasan ringkas dan relevansi hukum dari masing-masing pasal.</p>
+                <table border="1" cellpadding="10">
+                    <thead>
+                        <tr>
+                            <th>Pasal Terkait</th>
+                            <th>No</th>
+                            <th>Pasal</th>
+                            <th>Penjelasan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Undang-Undang Tindak Pidana Kekerasan Seksual</td>
+                            <td>1</td>
+                            <td>Pasal 6</td>
+                            <td>Menyangkut tindakan seksual yang dilakukan tanpa persetujuan, seperti sentuhan paksa, pemaksaan, dan pelecehan.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>2</td>
+                            <td>Pasal 7</td>
+                            <td>Mengatur pemaksaan hubungan seksual dengan ancaman, termasuk eksploitasi dalam hubungan atasan-bawahan dan pemerasan seksual.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>3</td>
+                            <td>Pasal 8</td>
+                            <td>Berfokus pada pemaksaan penggunaan alat kontrasepsi dan manipulasi terkait kesehatan reproduksi tanpa persetujuan.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>4</td>
+                            <td>Pasal 9</td>
+                            <td>Mengatur eksploitasi seksual dalam konteks pekerjaan, seperti pemaksaan hubungan seksual untuk mendapatkan pekerjaan atau nilai akademik.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>5</td>
+                            <td>Pasal 10</td>
+                            <td>Menyangkut pernikahan paksa, terutama terhadap anak di bawah umur, dengan ancaman atau manipulasi.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>6</td>
+                            <td>Pasal 11</td>
+                            <td>Mengatur tindakan pelecehan seksual oleh pejabat publik atau penegak hukum dalam konteks pengurusan dokumen resmi.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>7</td>
+                            <td>Pasal 12</td>
+                            <td>Berfokus pada pemaksaan hubungan seksual di lingkungan kerja, termasuk pelecehan seksual sistematis.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>8</td>
+                            <td>Pasal 13</td>
+                            <td>Mengatur penyebaran konten intim tanpa persetujuan, termasuk revenge porn dan sextortion.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>9</td>
+                            <td>Pasal 14</td>
+                            <td>Berfokus pada perekaman aktivitas seksual tanpa izin, termasuk penggunaan teknologi untuk merekam secara diam-diam.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>10</td>
+                            <td>Pasal 15</td>
+                            <td>Mengatur tindakan menyebarkan konten seksual yang merugikan korban, termasuk pembuatan deepfake.</td>
+                        </tr>
+                        <tr>
+                            <td>Pasal Kitab Undang-Undang Hukum Pidana</td>
+                            <td>11</td>
+                            <td>Pasal 285</td>
+                            <td>Mengatur pemerkosaan dengan ancaman kekerasan, termasuk tindakan pemerkosaan yang dilakukan dalam keadaan terpaksa.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>12</td>
+                            <td>Pasal 287</td>
+                            <td>Menyangkut hubungan seksual dengan anak di bawah umur, termasuk pemerkosaan dan pencabulan.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>13</td>
+                            <td>Pasal 289</td>
+                            <td>Mengatur pencabulan dengan ancaman kekerasan, termasuk pemaksaan tindakan cabul.</td>
+                        </tr>
+                        <tr>
+                            <td>Undang-Undang Perlindungan Anak</td>
+                            <td>14</td>
+                            <td>Pasal 81</td>
+                            <td>Mengatur pemerkosaan dan pencabulan terhadap anak, dengan hukuman yang lebih berat.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>15</td>
+                            <td>Pasal 82</td>
+                            <td>Berfokus pada pencabulan anak, termasuk tindakan cabul terhadap anak di bawah umur.</td>
+                        </tr>
+                        <tr>
+                            <td>Undang-Undang Penghapusan Kekerasan dalam Rumah Tangga</td>
+                            <td>16</td>
+                            <td>Pasal 46</td>
+                            <td>Mengatur kekerasan seksual dalam konteks rumah tangga, termasuk pemaksaan hubungan seksual.</td>
+                        </tr>
+                        <tr>
+                            <td>Undang-Undang Informasi dan Transaksi Elektronik</td>
+                            <td>17</td>
+                            <td>Pasal 45 ayat (1)</td>
+                            <td>Mengatur penyebaran konten ilegal, termasuk eksploitasi seksual anak dan pornografi.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            {% elif request.path == '/konsultasi' %}
+                <h2>💬 Konsultasi Kasus</h2>
+                <p>Gunakan fitur ini untuk memasukkan uraian atau kronologi kasus kekerasan seksual. 
+                    Sistem akan menganalisis deskripsi tersebut dan memprediksi jenis hukuman yang kemungkinan besar akan dijatuhkan.</p>
+                <div class="form-container">
+                    <form action="/konsultasi" method="post">
+                        <label for="teks_kasus">📝 Deskripsi Kasus:</label><br>
+                        <textarea name="teks_kasus" rows="6" placeholder="Contoh: Seorang laki-laki memaksa korban untuk berhubungan tanpa persetujuan..." required>{{ teks or '' }}</textarea><br>
+                        <button type="submit">🔎 Prediksi Respons Hukum</button>
+                    </form>
+                </div>
+
+                {% if rekomendasi %}
+                <div class="hasil">
+                    <h3>📌 Rekomendasi Pasal: {{ rekomendasi }}</h3>
+                    <p>📖 <strong>Penjelasan:</strong> {{ penjelasan }}</p>
+                    <p>🔒 <strong>Hukuman Penjara:</strong> {{ penjara }}</p>
+                    <p>💰 <strong>Denda:</strong> {{ denda }}</p>
+                </div>
+                {% endif %}
+            {% else %}
+                <h2>Selamat Datang di SP-Hukuman</h2>
+                <p>SP-Hukuman merupakan platform inovatif yang dirancang untuk membantu proses penilaian dan prediksi sanksi hukum terhadap kasus kekerasan 
+                    seksual dengan memanfaatkan teknologi Kecerdasan Buatan (AI). Sistem ini dibangun menggunakan metode Random Forest, yaitu algoritma machine learning yang terbukti efektif dalam melakukan klasifikasi terhadap data naratif atau deskriptif.
+Sistem ini memungkinkan pengguna untuk menginput deskripsi suatu kasus kekerasan seksual, kemudian memprosesnya secara otomatis untuk menghasilkan prediksi jenis hukuman yang paling relevan berdasarkan pola-pola data historis yang telah dianalisis sebelumnya.</p>
+                <p>Silakan pilih menu:</p>
+                <ul>
+                    <li><a href="/konsultasi">🧾 Konsultasi Kasus </a> - Gunakan fitur ini untuk memasukkan uraian atau kronologi kasus kekerasan seksual. </li>
+                    <li><a href="/pasal">📚 Daftar Pasal Hukum </a> - Jelajahi referensi hukum berupa daftar pasal-pasal yang terkait dengan tindak kekerasan seksual.</li>
+                </ul>
+            {% endif %}
+        </div>
+
+        <footer>
+            &copy; {{ current_year }} Sistem Pak,ar Prediksi Hukuman Kekerasan Seksual
+            <br>
+            <small>Dikembangkan tanggal: 18 November 2023</small>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
+
+//aw
