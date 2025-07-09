@@ -3,6 +3,7 @@ import joblib
 import pandas as pd
 import re
 import string
+import nltk  
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
@@ -11,7 +12,6 @@ import os
 
 nltk.download('stopwords')
 nltk.download('punkt')
-nltk.download('punkt_tab')
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
