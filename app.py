@@ -4,12 +4,14 @@ import pandas as pd
 import re
 import string
 from nltk.tokenize import word_tokenize
-import nltk
-nltk.download('stopwords')
-nltk.download('punkt')
+from nltk.corpus import stopwords
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 from datetime import datetime
 import os
+
+nltk.download('stopwords')
+nltk.download('punkt')
+nltk.download('punkt_tab')
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
