@@ -4,7 +4,9 @@ import pandas as pd
 import re
 import string
 from nltk.tokenize import word_tokenize
-from nltk.corpus import stopwords
+import nltk
+nltk.download('stopwords')
+nltk.download('punkt')
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 from datetime import datetime
 import os
