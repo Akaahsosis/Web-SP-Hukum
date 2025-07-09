@@ -12,6 +12,7 @@ import os
 
 nltk.download('stopwords')
 nltk.download('punkt')
+nltk.download('punkt_tab')
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
