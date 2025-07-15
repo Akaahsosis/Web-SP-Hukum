@@ -14,18 +14,25 @@
 
         <nav>
             <div>
-                <a href="/">Beranda</a>
-                <a href="/pasal">Pasal</a>
-                <a href="/konsultasi">Konsultasi</a>
+                <a href="#beranda">Beranda</a>
+                <a href="#pasal">Pasal</a>
+                <a href="#konsultasi">Konsultasi</a>
             </div>
-        
         </nav>
 
         <div class="main-content">
-            {% if page == "pasal" %}
+            <!-- BERANDA -->
+            <section id="beranda">
+                <h2>Selamat Datang di SP-Hukuman</h2>
+                <p>SP-Hukuman merupakan platform inovatif yang dirancang untuk membantu proses penilaian dan prediksi sanksi hukum terhadap kasus kekerasan 
+                    seksual dengan memanfaatkan teknologi Kecerdasan Buatan (AI). Sistem ini dibangun menggunakan metode Random Forest, yaitu algoritma machine learning yang terbukti efektif dalam melakukan klasifikasi terhadap data naratif atau deskriptif.</p>
+                <p>Sistem ini memungkinkan pengguna untuk menginput deskripsi suatu kasus kekerasan seksual, kemudian memprosesnya secara otomatis untuk menghasilkan prediksi jenis hukuman yang paling relevan berdasarkan pola-pola data historis yang telah dianalisis sebelumnya.</p>
+            </section>
+
+            <!-- PASAL -->
+            <section id="pasal">
                 <h2>📚 Daftar Pasal Terkait</h2>
-                <p>Jelajahi referensi hukum berupa daftar pasal-pasal yang terkait dengan tindak kekerasan seksual, 
-                    lengkap dengan penjelasan ringkas dan relevansi hukum dari masing-masing pasal.</p>
+                <p>Jelajahi referensi hukum berupa daftar pasal-pasal yang terkait dengan tindak kekerasan seksual, lengkap dengan penjelasan ringkas dan relevansi hukum dari masing-masing pasal.</p>
                 <table border="1" cellpadding="10">
                     <thead>
                         <tr>
@@ -140,7 +147,10 @@
                         </tr>
                     </tbody>
                 </table>
-            {% elif page == "konsultasi" %}
+            </section>
+
+            <!-- KONSULTASI -->
+            <section id="konsultasi">
                 <h2>💬 Konsultasi Kasus</h2>
                 <p>Gunakan fitur ini untuk memasukkan uraian atau kronologi kasus kekerasan seksual. 
                     Sistem akan menganalisis deskripsi tersebut dan memprediksi jenis hukuman yang kemungkinan besar akan dijatuhkan.</p>
@@ -160,23 +170,13 @@
                     <p>💰 <strong>Denda:</strong> {{ denda }}</p>
                 </div>
                 {% endif %}
-            {% else %}
-                <h2>Selamat Datang di SP-Hukuman</h2>
-                <p>SP-Hukuman merupakan platform inovatif yang dirancang untuk membantu proses penilaian dan prediksi sanksi hukum terhadap kasus kekerasan 
-                    seksual dengan memanfaatkan teknologi Kecerdasan Buatan (AI). Sistem ini dibangun menggunakan metode Random Forest, yaitu algoritma machine learning yang terbukti efektif dalam melakukan klasifikasi terhadap data naratif atau deskriptif.
-Sistem ini memungkinkan pengguna untuk menginput deskripsi suatu kasus kekerasan seksual, kemudian memprosesnya secara otomatis untuk menghasilkan prediksi jenis hukuman yang paling relevan berdasarkan pola-pola data historis yang telah dianalisis sebelumnya.</p>
-                <p>Silakan pilih menu:</p>
-                <ul>
-                    <li><a href="/konsultasi">🧾 Konsultasi Kasus </a> - Gunakan fitur ini untuk memasukkan uraian atau kronologi kasus kekerasan seksual. </li>
-                    <li><a href="/pasal">📚 Daftar Pasal Hukum </a> - Jelajahi referensi hukum berupa daftar pasal-pasal yang terkait dengan tindak kekerasan seksual.</li>
-                </ul>
-            {% endif %}
+            </section>
         </div>
 
         <footer>
-            &copy; {{ current_year }} Sistem Pak,ar Prediksi Hukuman Kekerasan Seksual
+            &copy; {{ current_year }} Sistem Pakar Prediksi Hukuman Kekerasan Seksual
             <br>
-            <small>Dikembangkan tanggal: 18 November 2023</small>
+            <small>Dikembangkan tanggal: 5 Januari 2025</small>
         </footer>
     </div>
 
